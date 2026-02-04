@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Sacramento&display=swap');
+
+:root {
+  /* iMac Brilliant - Dark Mode (Default) */
+  --bg-color: #000000;
+  /* Deep Black */
+  --card-bg: #1c1c1e;
+  /* Dark Gray Card */
+  --accent-color: #F5E050;
+  /* iMac Yellow */
+  --highlight-color: #63BD59;
+  /* iMac Green */
+  --text-color: #F5F5F7;
+  /* Off-white */
+  --secondary-text: #86868b;
+  /* Apple Gray */
+
+  /* Requested Fonts: Pontia Sans, Braden Sans -> Fallback to Outfit/Inter */
+  --font-main: 'Pontia Sans', 'Braden Sans', 'Outfit', 'Inter', sans-serif;
+  /* Orb Colors for Reflective Background */
+  --orb-color-1: rgba(10, 25, 47, 0.4);
+  /* Dark Blue */
+  --orb-color-2: rgba(26, 16, 51, 0.3);
+  /* Dark Purple */
+  --orb-color-3: rgba(40, 40, 40, 0.2);
+  /* Charcoal */
+
+  --transition-speed: 0.4s;
+}
+
+:root[data-theme="light"] {
+  /* iMac Brilliant - Light Mode */
+  --bg-color: #FAFAFA;
+  /* Off-white background */
+  --card-bg: #FFFFFF;
+  /* Pure White Card */
+  --accent-color: #4E86C8;
+  /* iMac Blue */
+  --highlight-color: #F28C38;
+  /* iMac Orange */
+  --text-color: #1d1d1f;
+  /* Apple Black */
+  --secondary-text: #86868b;
+  /* Apple Gray */
+
+  /* Orb Colors for Light Mode */
+  --orb-color-1: rgba(78, 134, 200, 0.1);
+  /* Muted Light Blue */
+  --orb-color-2: rgba(242, 140, 56, 0.05);
+  /* Muted Light Orange */
+  --orb-color-3: rgba(0, 0, 0, 0.03);
+  /* Ultra Faint Gray */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  filter: brightness(1.2);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  /* For horizontal scroll */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-text);
+  border-radius: 4px;
+}
+
+/* Utility to hide scrollbar but allow scrolling */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
